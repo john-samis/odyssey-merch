@@ -45,9 +45,11 @@ This is for static webpage hosting and where I currently have the QR code attend
 
 Also will buy and configure the Domain Name from them as well, everything is consolodated there.
 
-#### The Backend Links to the Shopify Starter service
+#### The Shopify Product Pages
 
-We can simply include button links to the Shopify hosted payments and security ecosystem.
+This frontend does not provide cart or checkout functionality. When the Shopify Starter
+pages are configured, merchandise cards can navigate to the relevant Shopify-hosted
+product pages, where ordering and payment take place.
 
 The other side of the recipient I AM NOT SURE YET. I'll play around with it and see what data schema is required and whip that up myself.
 
@@ -61,13 +63,23 @@ Make a branch, and we'll use pull requests for changes.
 - 1. Whip up the file strucure and basics of the JS/HTML/CSS project
 - 2. For proper design, we'll try to follow the 
 
+
+I used codex to whip up a small starting point.
+
+
 ## Frontend Structure
 
 ### Website structure
 
-- Homepage
-- Odyssey Info
-- Merchandise pages
-- Other? Not sure lmk what you think
+For the preliminary stage, the site is a single static page:
+
+- Header navigation with in-page section links
+- Featured introduction and image area
+- Display-only merchandise grid
+- About and collection-detail placeholders
+- Footer
+
+The current product cards intentionally contain no ordering actions. Shopify destinations
+can be connected later once the hosted product pages and final merchandise content exist.
 
 
