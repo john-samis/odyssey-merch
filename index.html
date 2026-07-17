@@ -2,10 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Odyssey-Merch Static Frontend</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Odyssey Dance merchandise collection preview.">
+    <title>Odyssey Dance | Merchandise</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Odyssey merchandise</h1>
-    <p>We will use the static web hosting on a hosting site. Using cloudflare</p>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="wordmark" href="#top" aria-label="Odyssey Dance merchandise home">
+                <span class="wordmark-primary">Odyssey</span>
+                <span class="wordmark-secondary">Dance Merch</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="#collection">Collection</a>
+                <a href="#about">About</a>
+                <a href="#details">Details</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Odyssey Dance</p>
+                    <h1 id="hero-title">Merchandise designed for the team and community.</h1>
+                    <p class="hero-description">
+                        This space will introduce upcoming Odyssey merchandise. Collection
+                        details and release information will appear here when confirmed.
+                    </p>
+                </div>
+
+                <div class="hero-visual" aria-label="Featured collection image placeholder">
+                    <span>Featured visual</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="collection section" id="collection" aria-labelledby="collection-title">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Collection</p>
+                        <h2 id="collection-title">Product preview</h2>
+                    </div>
+                    <p class="section-intro">
+                        Product imagery, colors, pricing, and availability will be added
+                        after the collection is finalized.
+                    </p>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-image" aria-label="Product image placeholder"></div>
+                        <div class="product-content">
+                            <p class="product-category">Category</p>
+                            <h3>Product name</h3>
+                            <p class="product-note">Description and options to be announced.</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image" aria-label="Product image placeholder"></div>
+                        <div class="product-content">
+                            <p class="product-category">Category</p>
+                            <h3>Product name</h3>
+                            <p class="product-note">Description and options to be announced.</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image" aria-label="Product image placeholder"></div>
+                        <div class="product-content">
+                            <p class="product-category">Category</p>
+                            <h3>Product name</h3>
+                            <p class="product-note">Description and options to be announced.</p>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image" aria-label="Product image placeholder"></div>
+                        <div class="product-content">
+                            <p class="product-category">Category</p>
+                            <h3>Product name</h3>
+                            <p class="product-note">Description and options to be announced.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about" aria-labelledby="about-title">
+            <div class="container two-column">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2 id="about-title">A place for the Odyssey identity.</h2>
+                </div>
+                <div class="body-copy">
+                    <p>
+                        A short introduction to the group, the collection, or the story
+                        behind a release can live here.
+                    </p>
+                    <p>
+                        This section is intentionally ready for final copy and photography
+                        once the visual direction is established.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="details section" id="details" aria-labelledby="details-title">
+            <div class="container">
+                <div class="section-heading details-heading">
+                    <div>
+                        <p class="eyebrow">Details</p>
+                        <h2 id="details-title">Collection information</h2>
+                    </div>
+                </div>
+
+                <div class="detail-grid">
+                    <article>
+                        <h3>Availability</h3>
+                        <p>Release timing and inventory information will be posted here.</p>
+                    </article>
+                    <article>
+                        <h3>Sizing</h3>
+                        <p>Size guidance can be included once garments are selected.</p>
+                    </article>
+                    <article>
+                        <h3>Orders</h3>
+                        <p>Ordering information will be provided when the shop is available.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p class="footer-brand">Odyssey Dance</p>
+            <p class="footer-note">Merchandise collection information coming soon.</p>
+        </div>
+    </footer>
 </body>
 </html>
