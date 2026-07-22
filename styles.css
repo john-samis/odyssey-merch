@@ -1,10 +1,10 @@
 :root {
     --background: #f8f6f1;
     --surface: #ffffff;
-    --ink: #171717;
-    --muted: #625f59;
-    --line: #dbd5cc;
-    --accent: #342252;
+    --ink: #000000;
+    --muted: #242424;
+    --line: #beb9b1;
+    --accent: #003870;
     --accent-soft: #e7dfef;
     --container: 74rem;
     --shadow: 0 0.7rem 2.2rem rgba(29, 20, 19, 0.05);
@@ -113,7 +113,9 @@ h2 {
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible, 
+.site-footer a:hover,
+.site-footer a:focus-visible {
     color: var(--accent);
 }
 
@@ -130,7 +132,7 @@ h2 {
 
 .eyebrow {
     color: var(--accent);
-    font-size: 0.73rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     margin-bottom: 1rem;
@@ -312,6 +314,7 @@ h2 {
     background: var(--ink);
     color: var(--background);
     padding: 2.2rem 0;
+    transition: color 150ms ease;
 }
 
 .footer-content {
@@ -357,6 +360,11 @@ h2 {
     height: 2rem;
     fill: white;
     padding: 0.5rem 0.5rem 0.5rem 0;
+    transition: color 150ms ease;
+}
+
+.footer-icon:hover {
+    fill: var(--accent);
 }
 
 @media (max-width: 58rem) {
