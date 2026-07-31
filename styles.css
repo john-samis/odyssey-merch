@@ -1,11 +1,11 @@
 :root {
-    --background: #f8f6f1;
+    --background: #e6e6e6;
     --surface: #ffffff;
     --ink: #000000;
     --muted: #242424;
-    --line: #beb9b1;
+    --accent-soft: #a8b8ff;
+    --accent-dark: #001325;
     --accent: #003870;
-    --accent-soft: #e7dfef;
     --container: 74rem;
     --shadow: 0 0.7rem 2.2rem rgba(29, 20, 19, 0.05);
 }
@@ -55,8 +55,8 @@ h2 {
 }
 
 .site-header {
-    background: rgba(248, 246, 241, 0.95);
-    border-bottom: 1px solid var(--line);
+    background: var(--accent-dark);
+    border-bottom: 1px solid var(--accent);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -87,16 +87,17 @@ h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.35rem;
     letter-spacing: 0.16em;
+    color: var(--surface);
 }
 
 .wordmark-logo {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     object-fit: cover;
 }
 
 .wordmark-secondary {
-    color: var(--muted);
+    color: var(--surface);
     font-size: 0.67rem;
     letter-spacing: 0.29em;
 }
@@ -108,7 +109,7 @@ h2 {
 }
 
 .site-nav a {
-    color: var(--muted);
+    color: var(--surface);
     transition: color 150ms ease;
 }
 
@@ -116,7 +117,7 @@ h2 {
 .site-nav a:focus-visible, 
 .site-footer a:hover,
 .site-footer a:focus-visible {
-    color: var(--accent);
+    color: var(--accent-soft);
 }
 
 .hero {
@@ -155,7 +156,7 @@ h2 {
     aspect-ratio: 4 / 4.4;
     background:
         linear-gradient(140deg, rgba(52, 34, 82, 0.08), rgba(52, 34, 82, 0)),
-        var(--accent-soft);
+        var(--muted);
     border-radius: 0.35rem;
     color: var(--muted);
     display: flex;
@@ -174,13 +175,14 @@ h2 {
 }
 
 .section {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--accent-dark);
     padding: clamp(3.25rem, 7vw, 5.5rem) 0;
 }
 
 .section-heading {
-    align-items: end;
+    align-items: start;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     justify-content: space-between;
     margin-bottom: clamp(2rem, 4vw, 3rem);
@@ -193,7 +195,6 @@ h2 {
 
 .section-intro {
     color: var(--muted);
-    max-width: 30rem;
 }
 
 .product-grid, .about-grid {
@@ -202,17 +203,29 @@ h2 {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.product-link {
+    border: 3px solid var(--accent);
+    background-color: var(--accent-dark);
+    padding: 6px;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: var(--surface);
+}
+
+.product-link:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
 .product-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 3px solid var(--accent);
     border-radius: 0.25rem;
     box-shadow: var(--shadow);
     overflow: hidden;
-    transition: transform 0.3s ease-in-out; 
-}
-
-.product-card:hover {
-    transform: scale(1.05);
 }
 
 .product-image {
@@ -220,7 +233,7 @@ h2 {
     background:
         linear-gradient(135deg, transparent 0%, rgba(52, 34, 82, 0.07) 100%),
         #efebe4;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--accent);
     overflow: hidden;
 }
 
@@ -233,6 +246,8 @@ h2 {
 
 .product-content {
     padding: 1.25rem 1.1rem 1.35rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-category {
@@ -279,7 +294,7 @@ h2 {
 }
 
 .detail-grid article {
-    border-left: 1px solid var(--line);
+    border-left: 1px solid var(--accent);
     padding: 0.4rem 1.5rem 0.6rem;
 }
 
@@ -364,7 +379,7 @@ h2 {
 }
 
 .footer-icon:hover {
-    fill: var(--accent);
+    fill: var(--accent-soft);
 }
 
 @media (max-width: 58rem) {
@@ -413,7 +428,7 @@ h2 {
 
     .detail-grid article {
         border-left: 0;
-        border-top: 1px solid var(--line);
+        border-top: 1px solid var(--accent);
         padding: 1.25rem 0 0;
     }
 }

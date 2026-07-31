@@ -26,6 +26,7 @@ function renderProducts() {
 
     //reach into the card and populate the data from the product object
     card.querySelector(".product-link").href = product.shopifyUrl;
+    card.querySelector(".product-link").textContent = "Order " + product.name;
 
     const cardImg = card.querySelector(".product-image > img");
     cardImg.src = product.image;
