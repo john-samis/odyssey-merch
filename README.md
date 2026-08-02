@@ -43,5 +43,5 @@ product pages, where ordering and payment take place.
 
 The other side of the recipient I AM NOT SURE YET. I'll play around with it and see what data schema is required and whip that up myself.
 
-Adding spotify change in coming days.
+Adding spotify change in coming days. Deploying...
 
