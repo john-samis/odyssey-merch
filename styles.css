@@ -1,11 +1,11 @@
 :root {
-    --background: #f8f6f1;
+    --background: #e6e6e6;
     --surface: #ffffff;
-    --ink: #171717;
-    --muted: #625f59;
-    --line: #dbd5cc;
-    --accent: #342252;
-    --accent-soft: #e7dfef;
+    --ink: #000000;
+    --muted: #242424;
+    --accent-soft: #a8b8ff;
+    --accent-dark: #001325;
+    --accent: #003870;
     --container: 74rem;
     --shadow: 0 0.7rem 2.2rem rgba(29, 20, 19, 0.05);
 }
@@ -55,8 +55,8 @@ h2 {
 }
 
 .site-header {
-    background: rgba(248, 246, 241, 0.95);
-    border-bottom: 1px solid var(--line);
+    background: var(--accent-dark);
+    border-bottom: 1px solid var(--accent);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -67,6 +67,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     min-height: 4.75rem;
+}
+
+.wordmark-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .wordmark {
@@ -81,10 +87,17 @@ h2 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.35rem;
     letter-spacing: 0.16em;
+    color: var(--surface);
+}
+
+.wordmark-logo {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
 }
 
 .wordmark-secondary {
-    color: var(--muted);
+    color: var(--surface);
     font-size: 0.67rem;
     letter-spacing: 0.29em;
 }
@@ -96,13 +109,15 @@ h2 {
 }
 
 .site-nav a {
-    color: var(--muted);
+    color: var(--surface);
     transition: color 150ms ease;
 }
 
 .site-nav a:hover,
-.site-nav a:focus-visible {
-    color: var(--accent);
+.site-nav a:focus-visible, 
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--accent-soft);
 }
 
 .hero {
@@ -118,7 +133,7 @@ h2 {
 
 .eyebrow {
     color: var(--accent);
-    font-size: 0.73rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     margin-bottom: 1rem;
@@ -141,7 +156,7 @@ h2 {
     aspect-ratio: 4 / 4.4;
     background:
         linear-gradient(140deg, rgba(52, 34, 82, 0.08), rgba(52, 34, 82, 0)),
-        var(--accent-soft);
+        var(--muted);
     border-radius: 0.35rem;
     color: var(--muted);
     display: flex;
@@ -149,16 +164,25 @@ h2 {
     justify-content: center;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    overflow: hidden;
+}
+
+.hero-visual > img, .about-visual > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .section {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--accent-dark);
     padding: clamp(3.25rem, 7vw, 5.5rem) 0;
 }
 
 .section-heading {
-    align-items: end;
+    align-items: start;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     justify-content: space-between;
     margin-bottom: clamp(2rem, 4vw, 3rem);
@@ -171,18 +195,34 @@ h2 {
 
 .section-intro {
     color: var(--muted);
-    max-width: 30rem;
 }
 
-.product-grid {
+.product-grid, .about-grid {
     display: grid;
     gap: clamp(1rem, 2vw, 1.5rem);
     grid-template-columns: repeat(4, 1fr);
 }
 
+.product-link {
+    border: 3px solid var(--accent);
+    background-color: var(--accent-dark);
+    padding: 6px;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: var(--surface);
+}
+
+.product-link:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-soft);
+    color: var(--accent-dark);
+}
+
 .product-card {
     background: var(--surface);
-    border: 1px solid var(--line);
+    border: 3px solid var(--accent);
     border-radius: 0.25rem;
     box-shadow: var(--shadow);
     overflow: hidden;
@@ -193,11 +233,21 @@ h2 {
     background:
         linear-gradient(135deg, transparent 0%, rgba(52, 34, 82, 0.07) 100%),
         #efebe4;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--accent);
+    overflow: hidden;
+}
+
+.product-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .product-content {
     padding: 1.25rem 1.1rem 1.35rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-category {
@@ -244,7 +294,7 @@ h2 {
 }
 
 .detail-grid article {
-    border-left: 1px solid var(--line);
+    border-left: 1px solid var(--accent);
     padding: 0.4rem 1.5rem 0.6rem;
 }
 
@@ -259,17 +309,41 @@ h2 {
     font-size: 0.94rem;
 }
 
+.about-visual {
+    align-items: center;
+    aspect-ratio: 4 / 4.4;
+    background:
+        linear-gradient(140deg, rgba(52, 34, 82, 0.08), rgba(52, 34, 82, 0)),
+        var(--accent-soft);
+    border-radius: 0.35rem;
+    color: var(--muted);
+    display: flex;
+    font-size: 0.78rem;
+    justify-content: center;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
 .site-footer {
     background: var(--ink);
     color: var(--background);
     padding: 2.2rem 0;
+    transition: color 150ms ease;
 }
 
 .footer-content {
-    align-items: center;
+    align-items: start;
     display: flex;
     gap: 1.5rem;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-social-label {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .footer-brand {
@@ -277,11 +351,35 @@ h2 {
     font-size: 1.1rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
+    width: 100%;
 }
 
 .footer-note {
     color: #d0cac0;
     font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    fill: white;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+    transition: color 150ms ease;
+}
+
+.footer-icon:hover {
+    fill: var(--accent-soft);
 }
 
 @media (max-width: 58rem) {
@@ -290,11 +388,11 @@ h2 {
         grid-template-columns: 1fr;
     }
 
-    .hero-visual {
+    .hero-visual, .about-visual {
         aspect-ratio: 16 / 10;
     }
 
-    .product-grid {
+    .product-grid, .about-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -323,13 +421,14 @@ h2 {
     }
 
     .product-grid,
+    .about-grid,
     .detail-grid {
         grid-template-columns: 1fr;
     }
 
     .detail-grid article {
         border-left: 0;
-        border-top: 1px solid var(--line);
+        border-top: 1px solid var(--accent);
         padding: 1.25rem 0 0;
     }
 }
