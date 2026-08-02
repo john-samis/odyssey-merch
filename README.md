@@ -19,16 +19,6 @@ This also gives our reports and the like fed to us for tracking purposes.
 
 Before we commit to a massive development effort, I'm gonna play around with it to see how we should interact with it.
 
-### For Ellena
-
-I'm not very familiar with Javascript and the heuristics of frontend design. This is where I think you could can help out. 
-
-Tasks:
-- Bring up some sort of file strucure and page design (very preliminary nothing crazy)
-- Leave visual design for later, (Figma, etc.)
-- Tell me what it intales, what matters in frontend design
-
-
 ## System Architecture - Reference
 
 ### The Frontend
@@ -53,33 +43,5 @@ product pages, where ordering and payment take place.
 
 The other side of the recipient I AM NOT SURE YET. I'll play around with it and see what data schema is required and whip that up myself.
 
-
-#### Development
-
-Make a branch, and we'll use pull requests for changes.
-
-#### Design Stages
-
-- 1. Whip up the file strucure and basics of the JS/HTML/CSS project
-- 2. For proper design, we'll try to follow the 
-
-
-I used codex to whip up a small starting point.
-
-
-## Frontend Structure
-
-### Website structure
-
-For the preliminary stage, the site is a single static page:
-
-- Header navigation with in-page section links
-- Featured introduction and image area
-- Display-only merchandise grid
-- About and collection-detail placeholders
-- Footer
-
-The current product cards intentionally contain no ordering actions. Shopify destinations
-can be connected later once the hosted product pages and final merchandise content exist.
-
+Adding spotify change in coming days.
 
